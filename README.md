@@ -1,4 +1,4 @@
-## Usage 
+# Usage 
 
 ##### set compose volume, config file and migrations folder
 ```yaml
