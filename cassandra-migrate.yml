@@ -1,0 +1,11 @@
+keyspace: my_keyspace
+profiles:
+  prod:
+    replication:
+      class: SimpleStrategy
+      replication_factor: 3
+  dev:
+    replication:
+      class: SimpleStrategy
+      replication_factor: 1
+migrations_path: ./migrations

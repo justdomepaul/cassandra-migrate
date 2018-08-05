@@ -1,9 +1,15 @@
 version: '3.6'
 services:
   cassandra-migrate:
+    container_name: CassandraMigrate
     build:
       context: .
       dockerfile: Dockerfile
-    env_file: .env
+    networks:
+      output_net:
     volumes:
-      - ${PWD}/${FOLDER_PATH}:/${FOLDER_PATH}
+      - ${PWD}/cassandra-migrate.yml:/cassandra-migrate.yml
+      - ${PWD}/migrations:/migrations
+networks:
+  output_net:
+    external: true
